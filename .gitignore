@@ -125,9 +125,9 @@ nb-configuration.xml
 /phpunit*.xml
 /.phpunit.*.cache
 
-# /public/pages
-# /public/index.html
-# /public/components.html
+!/public/assets/vendor
+/public/index.html
+/public/components.html
 
 # Third Party
 app/ThirdParty/myth-auth
