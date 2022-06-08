@@ -26,13 +26,13 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="/admin">
                             <i class="ni ni-shop text-primary"></i>
-                            <span class="nav-link-text">Dashboard</span>
+                            <span class="nav-link-text">Home</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#navbar-dashboards" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-dashboards">
                             <i class="ni ni-single-copy-04 text-pink"></i>
-                            <span class="nav-link-text">Reservasi</span>
+                            <span class="nav-link-text">Riwayat</span>
                         </a>
                         <div class="collapse" id="navbar-dashboards">
                             <ul class="nav nav-sm flex-column">
@@ -41,38 +41,6 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="../../pages/dashboards/alternative.html" class="nav-link">Alternative</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#navbar-user" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-user">
-                            <i class="ni ni-single-02 text-green"></i>
-                            <span class="nav-link-text">User</span>
-                        </a>
-                        <div class="collapse" id="navbar-user">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a href="../../pages/components/buttons.html" class="nav-link">Konfirmasi Akun</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../../pages/components/cards.html" class="nav-link">Permintaan Reset</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#navbar-components" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-components">
-                            <i class="ni ni-ui-04 text-info"></i>
-                            <span class="nav-link-text">Manajemen</span>
-                        </a>
-                        <div class="collapse" id="navbar-components">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a href="../../pages/components/buttons.html" class="nav-link">Laboratorium</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../../pages/components/cards.html" class="nav-link">Fasilitas</a>
                                 </li>
                             </ul>
                         </div>

@@ -34,11 +34,11 @@
 
 <body>
     <!-- Sidenav -->
-    <?= $this->include('layouts/admin/components/sidebar') ?>
+    <?= $this->include('layouts/member/components/sidebar') ?>
     <!-- Main content -->
     <div class="main-content" id="panel">
         <!-- Topnav -->
-        <?= $this->include('layouts/admin/components/topbar') ?>
+        <?= $this->include('layouts/member/components/topbar') ?>
 
         <!-- Page content -->
         <?= $this->renderSection('content') ?>

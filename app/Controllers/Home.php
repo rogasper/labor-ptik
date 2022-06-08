@@ -11,6 +11,6 @@ class Home extends BaseController
 
     public function admin()
     {
-        return view('admin/index');
+        return view('admin/dashboard/index');
     }
 }
