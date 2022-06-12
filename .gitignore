@@ -103,7 +103,7 @@ _modules/*
 nbproject/
 build/
 nbbuild/
-# dist/
+dist/
 nbdist/
 nbactions.xml
 nb-configuration.xml
@@ -126,7 +126,9 @@ nb-configuration.xml
 /.phpunit.*.cache
 
 !/public/assets/vendor
+/public/node_modules
 /public/index.html
+/public/images
 /public/components.html
 
 # Third Party

@@ -11,6 +11,10 @@ class Home extends BaseController
 
     public function admin()
     {
-        return view('admin/dashboard/index');
+        $data = [
+            'nav' => 'dashboard',
+            'title' => 'Dashboard'
+        ];
+        return view('admin/dashboard/index', $data);
     }
 }
