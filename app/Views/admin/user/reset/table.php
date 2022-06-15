@@ -4,11 +4,10 @@
             <tr>
                 <th class="text-center">No</th>
                 <th class="text-center">Foto</th>
-                <th class="text-center">Nama Laboratorium</th>
-                <th class="text-center">Kategori</th>
-                <th class="text-center">Kapasitas</th>
-                <th class="text-center">Harga</th>
-                <th class="text-center">Fasilitas</th>
+                <th class="text-center">Nama Pengguna</th>
+                <th class="text-center">Email</th>
+                <th class="text-center">Status</th>
+                <th class="text-center">Permintaan</th>
                 <th class="text-center">Aksi</th>
             </tr>
         </thead>
@@ -19,29 +18,16 @@
                 <tr>
                     <td class="text-center align-middle"><?= $no++; ?></td>
                     <td class="text-center align-middle">
-                        <a href="/images/lab/<?= $item['foto_lab'] ?>" class="gambarlab">
-                            <img src="/images/lab/<?= $item['foto_lab'] ?>" alt="<?= $item['nama_lab']; ?>" width="200px" style="border-radius: 1rem;">
+                        <a href="/images/avatar/<?= $item['avatar'] ?>" class="gambarlab">
+                            <img src="/images/avatar/<?= $item['avatar'] ?>" alt="<?= $item['nama']; ?>" width="180px" style="border-radius: 1rem; background-size: cover;">
                         </a>
                     </td>
-                    <td class="text-center align-middle"><?= $item['nama_lab']; ?></td>
-                    <td class="text-center align-middle"><?= $item['kategori_lab']; ?></td>
-                    <td class="text-center align-middle"><?= $item['kapasitas']; ?></td>
-                    <td class="text-center align-middle">Rp. <?= number_format($item['harga'], 0, ',', '.'); ?>/Jam</td>
+                    <td class="text-center align-middle"><?= $item['nama']; ?></td>
+                    <td class="text-center align-middle"><?= $item['email']; ?></td>
+                    <td class="text-center align-middle"><?= ($item['is_verified'] == 1 ? '<span class="badge badge-pill badge-success">verified</span>' : '<span class="badge badge-pill badge-danger">not verified</span>') ?></td>
+                    <td class="text-center align-middle"><?= ($item['request_reset'] == 1 ? '<span class="badge badge-lg badge-primary">Meminta Reset Password</span>' : '') ?></td>
                     <td class="text-center align-middle">
-                        <?php
-                        $faray = explode(",", $item['fasilitas']);
-                        foreach ($fasilitas as $fas) {
-                            foreach ($faray as $far) {
-                                if ($far == $fas['id']) { ?>
-                                    <?= $fas['nama'] ?> <span class="text-primary font-weight-bold">(<?= $fas['jumlah'] ?>)</span>,
-                        <?php
-                                }
-                            }
-                        }
-                        ?></td>
-                    <td class="text-center align-middle">
-                        <a href="#" class="btn bunder text-success" onclick="edit(<?= $item['id'] ?>)" data-toggle="tooltip" data-placement="top" title="Edit Data"><i class="fas fa-edit"></i></a>
-                        <a href="#" class="btn bunder text-danger" onclick="hapus(<?= $item['id'] ?>)" data-toggle="tooltip" data-placement="top" title="Hapus Data"><i class="fas fa-trash"></i></a>
+                        <a href="/admin/userreset/<?= $item['username'] ?>/confirm" class="btn bunder text-success" data-toggle="tooltip" data-placement="top" title="Konfirmasi Akun"><i class="fas fa-check"></i></a>
                     </td>
                 </tr>
             <?php } ?>
@@ -65,10 +51,6 @@
             "columnDefs": [{
                 "targets": [0, 1, 3],
                 "orderable": false
-            }],
-            "columnDefs": [{
-                "targets": [3, 6],
-                "class": "wrapok",
             }],
             "fnDrawCallback": function() {
                 $('.gambarlab').magnificPopup({

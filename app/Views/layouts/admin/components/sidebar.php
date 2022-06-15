@@ -46,17 +46,20 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#navbar-user" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-user">
+                        <a class="nav-link <?= ($nav == 'user-atur' || $nav == 'user-konfir' || $nav == 'user-reset' ? 'active' : '') ?>" href="#navbar-user" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-user">
                             <i class="ni ni-single-02 text-green"></i>
                             <span class="nav-link-text">User</span>
                         </a>
                         <div class="collapse" id="navbar-user">
                             <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a href="../../pages/components/buttons.html" class="nav-link">Konfirmasi Akun</a>
+                                <li class="nav-item <?= ($nav == 'user-atur'  ? 'active' : '') ?>">
+                                    <a href="/admin/user" class="nav-link">Pengaturan User</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="../../pages/components/cards.html" class="nav-link">Permintaan Reset</a>
+                                <li class="nav-item <?= ($nav == 'user-konfir' ? 'active' : '') ?>">
+                                    <a href="/admin/userconfirm" class="nav-link">Konfirmasi Akun</a>
+                                </li>
+                                <li class="nav-item <?= ($nav == 'user-reset' ? 'active' : '') ?>">
+                                    <a href="/admin/userreset" class="nav-link">Permintaan Reset</a>
                                 </li>
                             </ul>
                         </div>

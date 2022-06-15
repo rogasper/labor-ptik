@@ -17,8 +17,8 @@
                     <td><?= $item['nama']; ?></td>
                     <td class="text-center"><?= $item['jumlah']; ?></td>
                     <td class="text-center">
-                        <a href="#" class="btn bunder text-success" onclick="edit(<?= $item['id'] ?>)"><i class="fas fa-edit"></i></a>
-                        <a href="#" class="btn bunder text-danger" onclick="hapus(<?= $item['id'] ?>)"><i class="fas fa-trash"></i></a>
+                        <a href="#" class="btn bunder text-success" onclick="edit(<?= $item['id'] ?>)" data-toggle="tooltip" data-placement="top" title="Edit Data"><i class="fas fa-edit"></i></a>
+                        <a href="#" class="btn bunder text-danger" onclick="hapus(<?= $item['id'] ?>)" data-toggle="tooltip" data-placement="top" title="Hapus Data"><i class="fas fa-trash"></i></a>
                     </td>
                 </tr>
             <?php } ?>

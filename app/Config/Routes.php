@@ -36,6 +36,7 @@ $routes->get('/', 'Home::index');
 $routes->group('admin', function ($routes) {
     // Dashboard
     $routes->get('/', 'Home::admin');
+
     // Fasilitas
     $routes->get('fasilitas', 'Admin/FasilitasController::index');
     $routes->get('fasilitas/table', 'Admin/FasilitasController::getTable');
@@ -44,6 +45,7 @@ $routes->group('admin', function ($routes) {
     $routes->post('fasilitas/insert', 'Admin/FasilitasController::insert');
     $routes->put('fasilitas/(:segment)', 'Admin\FasilitasController::update/$1');
     $routes->delete('fasilitas/(:segment)', 'Admin\FasilitasController::hapus/$1');
+
     // Laboratorium
     $routes->get('laboratorium', 'Admin/LaboratoriumController::index');
     $routes->get('laboratorium/table', 'Admin/LaboratoriumController::getTable');
@@ -52,6 +54,26 @@ $routes->group('admin', function ($routes) {
     $routes->post('laboratorium/insert', 'Admin/LaboratoriumController::insert');
     $routes->put('laboratorium/(:segment)', 'Admin\LaboratoriumController::update/$1');
     $routes->delete('laboratorium/(:segment)', 'Admin\LaboratoriumController::hapus/$1');
+
+    // User
+    // pengaturan user
+    $routes->get('user', 'Admin/UserController::index');
+    $routes->get('user/table', 'Admin/UserController::getTable');
+    $routes->put('user/edit/(:segment)', 'Admin\UserController::update/$1');
+    $routes->get('user/editform/(:segment)', 'Admin\UserController::getEditForm/$1');
+    $routes->put('user/resetform/resetpassword/(:segment)', 'Admin\UserController::resetPassword/$1');
+    $routes->post('user/resetform/(:segment)', 'Admin\UserController::getResetForm/$1');
+    $routes->get('user/(:segment)', 'Admin\UserController::detail/$1');
+
+    // Konfirmasi Akun
+    $routes->get('userconfirm', 'Admin/UserController::confirmindex');
+    $routes->get('userconfirm/table', 'Admin/UserController::getTableConfirm');
+    $routes->get('userconfirm/(:segment)/confirm', 'Admin\UserController::confirmAccount/$1');
+
+    // Reset Akun
+    $routes->get('userreset', 'Admin/UserController::resetindex');
+    $routes->get('userreset/table', 'Admin/UserController::getTableReset');
+    $routes->get('userreset/(:segment)/confirm', 'Admin\UserController::confirmReset/$1');
 });
 
 /*
