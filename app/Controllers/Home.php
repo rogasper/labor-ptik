@@ -6,7 +6,25 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('index');
+        $data = [
+            'nav' => 'dashboard'
+        ];
+        return view('index', $data);
+    }
+    public function tim()
+    {
+        $data = [
+            'nav' => 'tim'
+        ];
+        return view('tim', $data);
+    }
+
+    public function kontak()
+    {
+        $data = [
+            'nav' => 'kontak'
+        ];
+        return view('kontak', $data);
     }
 
     public function admin()

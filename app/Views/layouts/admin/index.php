@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="../../node_modules/sweetalert2/dist/sweetalert2.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!--fullcalendar plugin files -->
+    <link rel="stylesheet" href="../assets/vendor/fullcalendar/dist/fullcalendar.min.css" />
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.23/datatables.min.css" /> -->
     <link rel="stylesheet" href="../../assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../../assets/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
@@ -71,10 +73,16 @@
     <!-- Datatable -->
     <script src="../../assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
     <!-- <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.23/datatables.min.js"></script> -->
+    <script src="../assets/vendor/moment/min/moment.min.js"></script>
+    <script src="../assets/vendor/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="../assets/vendor/fullcalendar/dist/locale-all.js"></script>
     <script src="../../assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="../../assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
+    <!-- <script src="../../assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script> -->
     <script src="../../assets/vendor/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
-    <script src="../../assets/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <!-- <script src="../../assets/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script> -->
     <script src="../../assets/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
     <script src="../../assets/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
     <script src="../../assets/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
@@ -83,6 +91,7 @@
     <script src="../../assets/js/argon.js?v=1.1.0"></script>
     <!-- Demo JS - remove this in your project -->
     <script src="../../assets/js/demo.min.js"></script>
+
     <?= $this->renderSection('script') ?>
 </body>
 

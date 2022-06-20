@@ -36,11 +36,11 @@
                         </a>
                         <div class="collapse" id="navbar-dashboards">
                             <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a href="../../pages/dashboards/dashboard.html" class="nav-link">Dashboard</a>
+                                <li class="nav-item <?= ($nav == 'reservasi' ? 'active' : '') ?>">
+                                    <a href="/admin/reservasi" class="nav-link">Semua Data Reservasi</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="../../pages/dashboards/alternative.html" class="nav-link">Alternative</a>
+                                <li class="nav-item <?= ($nav == 'payment' ? 'active' : '') ?>">
+                                    <a href="/admin/paymentreservasi" class="nav-link">Konfirmasi Pembayaran</a>
                                 </li>
                             </ul>
                         </div>

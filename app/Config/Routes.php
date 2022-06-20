@@ -32,6 +32,15 @@ $routes->setAutoRoute(false);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('/tim', 'Home::tim');
+$routes->get('/kontak', 'Home::kontak');
+$routes->get('sewa', 'Member/SewaController::index');
+$routes->get('sewa/software', 'Member/SewaController::software');
+$routes->get('sewa/multimedia', 'Member/SewaController::multimedia');
+$routes->get('sewa/network', 'Member/SewaController::network');
+
+$routes->group('member', function ($routes) {
+});
 
 $routes->group('admin', function ($routes) {
     // Dashboard
@@ -74,16 +83,29 @@ $routes->group('admin', function ($routes) {
     $routes->get('userreset', 'Admin/UserController::resetindex');
     $routes->get('userreset/table', 'Admin/UserController::getTableReset');
     $routes->get('userreset/(:segment)/confirm', 'Admin\UserController::confirmReset/$1');
+
+    // Reservasi
+    // All Data Reservasi Order
+    $routes->get('reservasi', 'Admin/OrderController::index');
+    $routes->get('reservasi/table', 'Admin/OrderController::getTable');
+    $routes->get('reservasi/form/(:segment)', 'Admin\OrderController::getDetailForm/$1');
+
+    // Reservasi Payment
+    $routes->get('paymentreservasi', 'Admin/OrderController::payindex');
+    $routes->get('paymentreservasi/table', 'Admin/OrderController::getPayTable');
+    $routes->get('paymentreservasi/form/(:segment)', 'Admin\OrderController::getConfirmForm/$1');
+    $routes->get('paymentreservasi/(:segment)/confirm', 'Admin\OrderController::confirmPayment/$1');
+    $routes->get('paymentreservasi/(:segment)/cancel', 'Admin\OrderController::cancelPayment/$1');
 });
 
 /*
- * --------------------------------------------------------------------
- * Additional Routing
- * --------------------------------------------------------------------
- *
- * There will often be times that you need additional routing and you
- * need it to be able to override any defaults in this file. Environment
- * based routes is one such time. require() additional route files here
+* --------------------------------------------------------------------
+* Additional Routing
+* --------------------------------------------------------------------
+*
+* There will often be times that you need additional routing and you
+* need it to be able to override any defaults in this file. Environment
+* based routes is one such time. require() additional route files here
  * to make that happen.
  *
  * You will have access to the $routes object within that file without

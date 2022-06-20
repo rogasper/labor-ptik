@@ -27,7 +27,7 @@
                     <td class="text-center align-middle"><?= ($item['is_verified'] == 1 ? '<span class="badge badge-pill badge-success">verified</span>' : '<span class="badge badge-pill badge-danger">not verified</span>') ?></td>
                     <td class="text-center align-middle"><?= ($item['request_reset'] == 1 ? '<span class="badge badge-lg badge-primary">Meminta Reset Password</span>' : '') ?></td>
                     <td class="text-center align-middle">
-                        <a href="/admin/userreset/<?= $item['username'] ?>/confirm" class="btn bunder text-success" data-toggle="tooltip" data-placement="top" title="Konfirmasi Akun"><i class="fas fa-check"></i></a>
+                        <a href="/admin/userreset/<?= $item['username'] ?>/confirm" class="btn bunder text-success" data-toggle="tooltip" data-placement="top" title="Konfirmasi Reset Password"><i class="fas fa-check"></i></a>
                     </td>
                 </tr>
             <?php } ?>

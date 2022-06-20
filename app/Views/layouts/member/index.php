@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="../../assets/vendor/nucleo/css/nucleo.css" type="text/css">
     <link rel="stylesheet" href="../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
     <!-- Page plugins -->
+    <link rel="stylesheet" href="../assets/vendor/fullcalendar/dist/fullcalendar.min.css" />
     <!-- Argon CSS -->
     <link rel="stylesheet" href="../../assets/css/argon.css?v=1.1.0" type="text/css">
 </head>
@@ -51,6 +52,9 @@
     <script src="../../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
     <script src="../../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
     <!-- Optional JS -->
+    <script src="../assets/vendor/moment/min/moment.min.js"></script>
+    <script src="../assets/vendor/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="../assets/vendor/fullcalendar/dist/locale-all.js"></script>
     <script src="../../assets/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="../../assets/vendor/chart.js/dist/Chart.extension.js"></script>
     <script src="../../assets/vendor/jvectormap-next/jquery-jvectormap.min.js"></script>
@@ -59,6 +63,8 @@
     <script src="../../assets/js/argon.js?v=1.1.0"></script>
     <!-- Demo JS - remove this in your project -->
     <script src="../../assets/js/demo.min.js"></script>
+
+    <?= $this->renderSection('script') ?>
 </body>
 
 </html>

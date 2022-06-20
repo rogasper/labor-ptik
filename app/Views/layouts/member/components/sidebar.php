@@ -2,7 +2,7 @@
     <div class="scrollbar-inner">
         <!-- Brand -->
         <div class="sidenav-header d-flex align-items-center">
-            <a class="navbar-brand" href="/admin">
+            <a class="navbar-brand" href="/">
                 <!-- <img src="../../assets/img/brand/blue.png" class="navbar-brand-img" alt="..."> -->
                 <i class="ni ni-building text-primary mt-1"></i>
                 <span class="text-primary mt-1 font-weight-bold">LABOR PTIK</span>
@@ -24,9 +24,27 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin">
+                        <a class="nav-link <?= ($nav == 'dashboard' ? 'active' : '') ?>" href="/">
                             <i class="ni ni-shop text-primary"></i>
                             <span class="nav-link-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?= ($nav == 'sewa' ? 'active' : '') ?>" href="/sewa">
+                            <i class="ni ni-app text-info"></i>
+                            <span class="nav-link-text">Sewa</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?= ($nav == 'tim' ? 'active' : '') ?>" href="/tim">
+                            <i class="ni ni-support-16 text-warning"></i>
+                            <span class="nav-link-text">Tim</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?= ($nav == 'kontak' ? 'active' : '') ?>" href="/kontak">
+                            <i class="ni ni-badge text-danger"></i>
+                            <span class="nav-link-text">Kontak</span>
                         </a>
                     </li>
                     <li class="nav-item">
