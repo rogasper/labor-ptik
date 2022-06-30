@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card">
-                                <img src="../assets/img/mn.jpg" alt="Ahmad" style="padding: 3%;width:auto">
+                                <img src="/images/ahmad.jpg" alt="Ahmad" style="padding: 3%; object-fit: cover; height: 400px;">
                                 <div class="container">
                                     <h2>Ahmad Nur Kholily</h2>
                                     <p class="title">K3519005</p>
@@ -25,7 +25,7 @@
 
                         <div class="col-md-4">
                             <div class="card">
-                                <img src="../assets/img/jk.jpg" alt="Royan" style="padding: 3%;width:auto">
+                                <img src="/images/royan.jpg" alt="Royan" style="padding: 3%; object-fit: cover; height: 400px;">
                                 <div class="container">
                                     <h2>Royan Gagas Pradana</h2>
                                     <p class="title">K35190</p>
@@ -38,7 +38,7 @@
 
                         <div class="col-md-4">
                             <div class="card">
-                                <img src="../assets/img/iu.png" alt="Efa" style="padding: 3%">
+                                <img src="/images/eva.jpeg" alt="Efa" style="padding: 3%; object-fit: cover; height: 400px;">
                                 <div class="container">
                                     <h2>Efa Setiyani</h2>
                                     <p class="title">K35190</p>

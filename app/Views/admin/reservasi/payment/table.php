@@ -39,7 +39,7 @@
                     <td class="text-center align-middle"><?= date_format($start_time, "H:i"); ?> - <?= date_format($end_time, "H:i"); ?></td>
                     <td class="text-center align-middle">Rp. <?= number_format($item['total_harga'], 0, ',', '.'); ?></td>
                     <td class="text-center align-middle">
-                        <a href="#" onclick="edit('<?= $item['id'] ?>')" class="btn bunder text-success" data-toggle="tooltip" data-placement="top" title="Konfirmasi Pemesanan"><i class="fas fa-file-invoice"></i></a>
+                        <a href="#" onclick="edit('<?= $item['kode'] ?>')" class="btn bunder text-success" data-toggle="tooltip" data-placement="top" title="Konfirmasi Pemesanan"><i class="fas fa-file-invoice"></i></a>
                     </td>
                 </tr>
             <?php } ?>

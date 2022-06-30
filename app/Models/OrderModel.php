@@ -14,7 +14,7 @@ class OrderModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['users_id', 'labs_id', 'tanggal_sewa', 'start_time', 'end_time', 'total_harga', 'status'];
+    protected $allowedFields    = ['users_id', 'labs_id', 'tanggal_sewa', 'start_time', 'end_time', 'total_harga', 'status', 'kode'];
 
     // Dates
     protected $useTimestamps = false;
@@ -65,7 +65,7 @@ class OrderModel extends Model
         $builder = $db->table('orders');
         $builder->join('users', 'users.id = orders.users_id');
         $builder->join('labs', 'labs.id = orders.labs_id');
-        $builder->where('orders.id', $id);
+        $builder->where('orders.kode', $id);
         $builder->select('*');
         $query = $builder->get()->getResultArray();
         $query = array_map(function ($value) {
@@ -105,6 +105,19 @@ class OrderModel extends Model
         $builder->orderBy('orders.created_at', 'DESC');
         $query = $builder->get()->getResultArray();
 
+        return $query;
+    }
+
+    public function getAllDataRiwayatById($id, $page = 0, $perPage = 100)
+    {
+        $db         = \Config\Database::connect();
+        $builder    = $db->table('orders');
+        $builder->join('users', 'users.id = orders.users_id');
+        $builder->join('labs', 'labs.id = orders.labs_id');
+        $builder->where('orders.users_id', $id);
+        $builder->orderBy('orders.created_at', 'DESC');
+        // $builder->limit(2, 0);
+        $query = $builder->get($page, $perPage)->getResultArray();
         return $query;
     }
 }

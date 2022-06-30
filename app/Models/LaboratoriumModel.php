@@ -39,4 +39,17 @@ class LaboratoriumModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function pencariansoft($kunci)
+    {
+        return $this->table('labs')->where('kategori_lab', 'Software Engineering')->like(array('nama_lab' => $kunci));
+    }
+    public function pencarianmul($kunci)
+    {
+        return $this->table('labs')->where('kategori_lab', 'Multimedia Studio')->like(array('nama_lab' => $kunci));
+    }
+    public function pencariancomp($kunci)
+    {
+        return $this->table('labs')->where('kategori_lab', 'Computer Network and Instrumentation')->like(array('nama_lab' => $kunci));
+    }
 }

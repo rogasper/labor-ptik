@@ -139,7 +139,7 @@ class OrderController extends BaseController
 
     public function confirmPayment($id)
     {
-        $order = $this->orderModel->find($id);
+        $order = $this->orderModel->where('kode', $id)->first();
         $order['status'] = 'lunas';
         $this->orderModel->save($order);
         session()->setFlashdata('sukses', 'Kode sewa <strong>' . $order['kode'] . '</strong> berhasil konfirmasi sewa');
@@ -148,7 +148,7 @@ class OrderController extends BaseController
 
     public function cancelPayment($id)
     {
-        $order = $this->orderModel->find($id);
+        $order = $this->orderModel->where('kode', $id)->first();
         $order['status'] = 'cancel';
         $this->orderModel->save($order);
         session()->setFlashdata('sukses', 'Kode sewa<strong>' . $order['kode'] . '</strong> berhasil dibatalkan');

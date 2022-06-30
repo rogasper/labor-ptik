@@ -14,8 +14,8 @@
                             <h2 class="display-4 text-white font-weight-light">Website Peminjaman Laboratorium Komputer Prodi PTIK</h2>
                             <p class="text-white mt-1">Klik tombol <b>"Sewa Lab"</b> untuk melanjutkan ke proses peminjaman lebih lanjut. Di kanan merupakan daftar hal yang bisa di pinjam.</p>
                             <div class="mt-5 text-center">
-                                <a href="#" class="btn btn-neutral my-2">Daftar Member</a>
-                                <a href="#" class="btn btn-default my-2">Sewa Lab</a>
+                                <a href="/register" class="btn btn-neutral my-2">Daftar Member</a>
+                                <a href="/sewa" class="btn btn-default my-2">Sewa Lab</a>
                             </div>
                         </div>
                     </div>
@@ -170,7 +170,7 @@
                             <li>Pemrograman Berorientasi Objek</li>
                             <li>Dsb.</li>
                         </ul>
-                        <a href="#" class="font-weight-bold text-warning mt-5">Halaman web lab RPL</a>
+                        <a href="/sewa/software" class="font-weight-bold text-warning mt-5">Halaman web lab RPL</a>
                     </div>
                 </div>
             </div>
@@ -197,7 +197,7 @@
                             <li>Teknik Pengolahan Audio Video</li>
                             <li>Dsb.</li>
                         </ul>
-                        <a href="#" class="font-weight-bold text-success mt-5">Halaman web lab Mulmed</a>
+                        <a href="/sewa/multimedia" class="font-weight-bold text-success mt-5">Halaman web lab Mulmed</a>
                     </div>
                 </div>
             </div>
@@ -223,7 +223,7 @@
                             <li>Komunikasi Data dan Jaringan Komputer</li>
                             <li>Dsb.</li>
                         </ul>
-                        <a href="#" class="font-weight-bold text-primary mt-5">Halaman web lab TKJ</a>
+                        <a href="/sewa/network" class="font-weight-bold text-primary mt-5">Halaman web lab TKJ</a>
                     </div>
                 </div>
             </div>

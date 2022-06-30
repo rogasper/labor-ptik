@@ -18,13 +18,13 @@
     <div class="row">
         <!-- Search form -->
         <div class="col">
-            <form class="navbar-search-light" id="navbar-search-main">
+            <form class="navbar-search-light" id="navbar-search-main" method="GET" action="">
                 <div class="form-group mb-0">
                     <div class="input-group input-group-alternative input-group-merge">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-search"></i></span>
                         </div>
-                        <input class="form-control" placeholder="Search" type="text">
+                        <input class="form-control py-3" placeholder="Search" type="text" name="cari" value="<?= $kunci ?>">
                     </div>
                 </div>
             </form>
@@ -34,29 +34,41 @@
 
 <div class="container-fluid mt-5">
     <div class="row">
-        <div class="col-md-4 col-sm-12">
-            <div class="card">
-                <!-- Card image -->
-                <img class="card-img-top" src="../../assets/img/theme/img-1-1000x600.jpg" alt="Image placeholder">
-                <!-- Card body -->
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col">
-                            <h2 class="card-title mb-3 display-4 mt--7 text-white">Ruangan A</h2>
+        <?php
+        $no = 1 + (10 * ($page - 1));
+        foreach ($list as $item) :
+        ?>
+            <div class="col-md-4 col-sm-12">
+                <div class="card">
+                    <!-- Card image -->
+                    <img class="card-img-top" src="../../images/lab/<?= $item['foto_lab'] ?>" style="max-height: 160px; object-fit: cover;" alt="Image placeholder">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <h2 class="card-title mb-3 display-4 mt--7 text-white"><?= $item['nama_lab'] ?></h2>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <p class="card-text">Kapasitas</p>
-                            <h3 class="text-primary font-weight-bold mt--3">50 Orang</h3>
-                            <p class="card-text">Harga Sewa</p>
-                            <h3 class="text-primary font-weight-bold mt--3">Rp. 50.000/Jam</h3>
-                        </div>
-                        <div class="col-6 d-flex align-items-end justify-content-end">
-                            <a href="#" class="btn btn-primary">Booking</a>
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="card-text">Kapasitas</p>
+                                <h3 class="text-primary font-weight-bold mt--3"><?= $item['kapasitas'] ?> Orang</h3>
+                                <p class="card-text">Harga Sewa</p>
+                                <h3 class="text-primary font-weight-bold mt--3">Rp. <?= number_format($item['harga'], 0, ',', '.'); ?>/Jam</h3>
+                            </div>
+                            <div class="col-6 d-flex align-items-end justify-content-end">
+                                <a href="/member/sewa/<?= $item['id'] ?>" class="btn btn-primary">Booking</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <div class="pagination mt-5">
+                <?= $pager->Links('btcorona', 'bootstrap_pagination') ?>
             </div>
         </div>
     </div>

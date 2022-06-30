@@ -223,7 +223,8 @@
 
                 options = {
                     locale: 'id',
-                    defaultView: 'listWeek',
+                    minTime: "07:00:00",
+                    maxTime: "21:00:00",
                     header: {
                         right: '',
                         center: '',

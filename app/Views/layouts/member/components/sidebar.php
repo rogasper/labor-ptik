@@ -47,22 +47,14 @@
                             <span class="nav-link-text">Kontak</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#navbar-dashboards" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-dashboards">
-                            <i class="ni ni-single-copy-04 text-pink"></i>
-                            <span class="nav-link-text">Riwayat</span>
-                        </a>
-                        <div class="collapse" id="navbar-dashboards">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a href="../../pages/dashboards/dashboard.html" class="nav-link">Dashboard</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../../pages/dashboards/alternative.html" class="nav-link">Alternative</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                    <?php if (session()->get('role') == 'member') : ?>
+                        <li class="nav-item">
+                            <a class="nav-link <?= ($nav == 'riwayat' ? 'active' : '') ?>" href="/member/riwayat/<?= session()->get('id') ?>">
+                                <i class="ni ni-single-copy-04 text-pink"></i>
+                                <span class="nav-link-text">Riwayat</span>
+                            </a>
+                        </li>
+                    <?php endif ?>
                 </ul>
             </div>
         </div>

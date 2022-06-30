@@ -19,9 +19,9 @@
         </div>
     </div>
 </div>
-<div class="container-fluid mt--6">
+<div class="container-fluid mt--9">
     <div class="row">
-        <div class="col-4">
+        <div class="col-md-4 col-sm-12">
             <a href="/sewa/software">
                 <div class="card bg-dark text-white border-0">
                     <span class="mask bg-dark opacity-3"></span>
@@ -34,7 +34,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-4">
+        <div class="col-md-4 col-sm-12">
             <a href="/sewa/multimedia">
                 <div class="card bg-dark text-white border-0">
                     <span class="mask bg-dark opacity-3"></span>
@@ -47,7 +47,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-4">
+        <div class="col-md-4 col-sm-12">
             <a href="/sewa/network">
                 <div class="card bg-dark text-white border-0">
                     <span class="mask bg-dark opacity-3"></span>
@@ -191,6 +191,8 @@
 
                 options = {
                     locale: 'id',
+                    minTime: "07:00:00",
+                    maxTime: "21:00:00",
                     header: {
                         right: '',
                         center: '',

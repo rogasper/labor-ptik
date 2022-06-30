@@ -32,6 +32,18 @@ $routes->setAutoRoute(false);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+
+// Auth
+$routes->get('/login', 'Auth/AuthController::index', ["filter" => "noauth"]);
+$routes->get('/logout', 'Auth/AuthController::logout');
+$routes->get('/register', 'Auth/AuthController::register', ["filter" => "noauth"]);
+$routes->post('/login', 'Auth/AuthController::login');
+$routes->post('/register', 'Auth/AuthController::newAccount');
+$routes->get('/forget', 'Auth/AuthController::forget');
+$routes->post('/requestreset', 'Auth/AuthController::requestreset');
+$routes->put('/resetpassword/(:segment)', 'Auth\AuthController::resetPassword/$1');
+
+
 $routes->get('/tim', 'Home::tim');
 $routes->get('/kontak', 'Home::kontak');
 $routes->get('sewa', 'Member/SewaController::index');
@@ -39,10 +51,19 @@ $routes->get('sewa/software', 'Member/SewaController::software');
 $routes->get('sewa/multimedia', 'Member/SewaController::multimedia');
 $routes->get('sewa/network', 'Member/SewaController::network');
 
-$routes->group('member', function ($routes) {
+$routes->group('member', ["filter" => "auth"], function ($routes) {
+    $routes->get('sewa/(:segment)', 'Member\SewaController::sewa/$1');
+    $routes->get('riwayat/(:segment)', 'Member\RiwayatController::index/$1');
+    $routes->post('booking', 'Member\SewaController::booking');
+
+    $routes->put('user/edit/(:segment)', 'Member\MemberController::update/$1');
+    $routes->get('user/editform/(:segment)', 'Member\MemberController::getEditForm/$1');
+    $routes->put('user/resetform/resetpassword/(:segment)', 'Member\MemberController::resetPassword/$1');
+    $routes->post('user/resetform/(:segment)', 'Member\MemberController::getResetForm/$1');
+    $routes->get('user/(:segment)', 'Member\MemberController::detail/$1');
 });
 
-$routes->group('admin', function ($routes) {
+$routes->group('admin', ["filter" => "auth-admin"], function ($routes) {
     // Dashboard
     $routes->get('/', 'Home::admin');
 
