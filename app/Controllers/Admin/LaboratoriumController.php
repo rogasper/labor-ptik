@@ -117,7 +117,7 @@ class LaboratoriumController extends BaseController
                 $namafoto = $foto->getRandomName();
                 $foto->move(ROOTPATH . 'public/images/lab', $namafoto);
             } else {
-                switch ($this->request->getFile('foto_lab')) {
+                switch ($this->request->getPost('kategori_lab')) {
                     case 'Software Engineering':
                         $namafoto = 'software.jpg';
                         break;

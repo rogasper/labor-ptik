@@ -279,5 +279,21 @@
             $('#sewabtn').attr('disabled', false);
         }
     });
+    const picker = document.getElementById('tanggal_sewa');
+    picker.addEventListener('change', function(e) {
+        var day = new Date(this.value).getUTCDay();
+        if ([6, 0].includes(day)) {
+            e.target.setCustomValidity('week-end not allowed')
+            $('#tanggal_sewa').addClass('is-invalid');
+            $('#errortanggal_sewa').css('display', 'block');
+            $('#errortanggal_sewa').html('Sabtu-minggu Libur');
+            $('#sewabtn').attr('disabled', true);
+        } else {
+            e.target.setCustomValidity('');
+            $('#tanggal_sewa').removeClass('is-invalid');
+            $('#errortanggal_sewa').html('');
+            $('#sewabtn').attr('disabled', false);
+        }
+    });
 </script>
 <?= $this->endSection() ?>

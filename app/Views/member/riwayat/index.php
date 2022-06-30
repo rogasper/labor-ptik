@@ -121,7 +121,11 @@
 </div>
 
 <div class="container-fluid">
-    <?= $total ?>
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <?= $pager->links('default', 'bootstrap_pagination') ?>
+        </div>
+    </div>
 </div>
 
 <?= $this->endSection() ?>

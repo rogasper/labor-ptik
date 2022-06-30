@@ -25,6 +25,7 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <!-- Icons -->
+    <link rel="stylesheet" href="<?= base_url('node_modules/sweetalert2/dist/sweetalert2.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets') ?>/vendor/nucleo/css/nucleo.css" type="text/css">
     <link rel="stylesheet" href="<?= base_url('assets') ?>/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
     <!-- Argon CSS -->
@@ -40,6 +41,7 @@
     <script src="<?= base_url('assets') ?>/vendor/js-cookie/js.cookie.js"></script>
     <script src="<?= base_url('assets') ?>/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
     <script src="<?= base_url('assets') ?>/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+    <script src="<?= base_url('node_modules/sweetalert2/dist/sweetalert2.all.min.js') ?>"></script>
     <!-- Argon JS -->
     <script src="<?= base_url('assets') ?>/js/argon.js?v=1.1.0"></script>
     <!-- Demo JS - remove this in your project -->

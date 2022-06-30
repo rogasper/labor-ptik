@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\UserModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
@@ -35,7 +36,7 @@ class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = [];
+    protected $helpers = ['cookie'];
 
     /**
      * Constructor.
@@ -46,6 +47,23 @@ class BaseController extends Controller
         parent::initController($request, $response, $logger);
 
         // Preload any models, libraries, etc, here.
+        $cookie = get_cookie('username');
+        if (isset($cookie)) {
+            $userModel = new UserModel();
+            $otentik = $userModel->where(['username' => $cookie])->first();
+            $sesi = [
+                'email' => $otentik['email'],
+                'username' => $otentik['username'],
+                'nama' => $otentik['nama'],
+                'avatar' => $otentik['avatar'],
+                'id' => $otentik['id'],
+                'is_verified' => $otentik['is_verified'],
+                'civitas' => $otentik['civitas'],
+                'role' => $otentik['role'],
+                'isLoggedIn' => TRUE
+            ];
+            session()->set($sesi);
+        }
 
         // E.g.: $this->session = \Config\Services::session();
     }

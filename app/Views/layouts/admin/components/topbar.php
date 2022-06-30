@@ -19,11 +19,6 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item d-sm-none">
-                    <a class="nav-link" href="#" data-action="search-show" data-target="#navbar-search-main">
-                        <i class="ni ni-zoom-split-in"></i>
-                    </a>
-                </li>
 
 
             </ul>

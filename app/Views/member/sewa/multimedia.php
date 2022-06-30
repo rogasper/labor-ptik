@@ -68,7 +68,7 @@
     <div class="row">
         <div class="col d-flex justify-content-center">
             <div class="pagination mt-5">
-                <?= $pager->Links('btcorona', 'bootstrap_pagination') ?>
+                <?= $pager->Links('default', 'bootstrap_pagination') ?>
             </div>
         </div>
     </div>

@@ -84,6 +84,24 @@
 
 <script>
     $(document).ready(function() {
+        $('input[type="file"]').change(function() {
+            var ext = this.value.match(/\.(.+)$/)[1];
+            switch (ext) {
+                case 'jpg':
+                case 'jpeg':
+                case 'png':
+                case 'gif':
+                    $('#uploadButton').attr('disabled', false);
+                    break;
+                default:
+                    Toast.fire({
+                        title: "Hanya file gambar",
+                        type: 'error',
+                    })
+                    this.value = '';
+            }
+        });
+
         $('.bootstrap-select').selectpicker();
 
         $('#file-upload').change(function() {

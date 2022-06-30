@@ -14,19 +14,24 @@ class RiwayatController extends BaseController
             return redirect('/');
         }
         $pager = \Config\Services::pager();
-        $page = 2;
-        $perPage = 0;
+        $page = (int)(($this->request->getVar('page') !== null) ? $this->request->getVar('page') : 1) - 1;
+        $perPage = 3;
         $query = new OrderModel();
-
+        $querytotal = $query->getAllDataRiwayatByIdAll($id);
 
         $query = $query->getAllDataRiwayatById($id, $page, $perPage);
-        $total = count($query);
+
+        // return json_encode($query);
+        $total = count($querytotal);
+
+        $pager->makeLinks($page, $perPage, $total);
 
         $data = [
             'nav' => 'riwayat',
             'title' => 'Riwayat Pemesanan',
             'list' => $query,
-            'total' => $total
+            'total' => $total,
+            'pager' => $pager
         ];
 
         return view('member/riwayat/index', $data);

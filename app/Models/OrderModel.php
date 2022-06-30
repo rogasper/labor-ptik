@@ -108,7 +108,7 @@ class OrderModel extends Model
         return $query;
     }
 
-    public function getAllDataRiwayatById($id, $page = 0, $perPage = 100)
+    public function getAllDataRiwayatById($id, $page, $perPage)
     {
         $db         = \Config\Database::connect();
         $builder    = $db->table('orders');
@@ -116,8 +116,19 @@ class OrderModel extends Model
         $builder->join('labs', 'labs.id = orders.labs_id');
         $builder->where('orders.users_id', $id);
         $builder->orderBy('orders.created_at', 'DESC');
-        // $builder->limit(2, 0);
-        $query = $builder->get($page, $perPage)->getResultArray();
+        // $builder->limit();
+        $query = $builder->get($perPage, $page)->getResultArray();
+        return $query;
+    }
+    public function getAllDataRiwayatByIdAll($id)
+    {
+        $db         = \Config\Database::connect();
+        $builder    = $db->table('orders');
+        $builder->join('users', 'users.id = orders.users_id');
+        $builder->join('labs', 'labs.id = orders.labs_id');
+        $builder->where('orders.users_id', $id);
+        $builder->orderBy('orders.created_at', 'DESC');
+        $query = $builder->get()->getResultArray();
         return $query;
     }
 }
